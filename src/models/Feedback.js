@@ -18,12 +18,30 @@ export default class Feedback extends alaska.Model {
     comments: {
       title: 'Comments',
       ref: 'FeedbackComment',
-      path: 'feedback'
+      path: 'feedback',
+      options: {
+        sort: 'createdAt'
+      },
+      populations: {
+        user: {}
+      }
     }
   };
 
   static populations = {
-    lastComment: {}
+    lastComment: {
+      options: {
+        sort: 'createdAt'
+      },
+      populations: {
+        user: {
+        }
+      }
+    }
+  };
+
+  static scopes = {
+    list: '* -comments'
   };
 
   static api = {

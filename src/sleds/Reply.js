@@ -24,6 +24,9 @@ export default class Reply extends alaska.Sled {
       content,
       feedback: feedback._id
     });
+    if (data.admin) {
+      comment.fromAdmin = true;
+    }
     await comment.save();
     feedback.lastComment = comment._id;
     await feedback.save();

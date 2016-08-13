@@ -11,7 +11,7 @@ export default class FeedbackComment extends alaska.Model {
   static label = 'Feedback Comment';
   static icon = 'comments-o';
   static title = 'content';
-  static defaultColumns = 'feedback user content createdAt';
+  static defaultColumns = 'feedback user fromAdmin content createdAt';
   static defaultSort = '-createdAt';
 
   static populations = {
@@ -40,6 +40,10 @@ export default class FeedbackComment extends alaska.Model {
     createdAt: {
       label: 'Created At',
       type: Date
+    },
+    fromAdmin: {
+      label: 'From Admin',
+      type: Boolean
     },
     content: {
       label: 'Content',

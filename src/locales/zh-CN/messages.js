@@ -10,5 +10,6 @@ export default {
   'Updated At': '更新时间',
   'Feedback Comment': '反馈回复',
   'Last Comment': '最新回复',
-  Reply: '回复'
+  Reply: '回复',
+  'From Admin': '管理员回复'
 };
